@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Nohvara Continuum** is a personal portfolio/service site for Morris Javan Andanje, a coach specializing in helping people clarify their identity and build practical life systems. The site is a single-page HTML application with embedded CSS and minimal JavaScript.
+**Nohvara Continuum** is a personal portfolio site for Morris Javan Andanje. The site is a single-page HTML application with embedded CSS and minimal JavaScript. The repository does not assume a specific professional label for the owner; AI agents should mirror the public-facing text in `index.html` when describing the site.
 
 ### Architecture
 
