@@ -16,7 +16,7 @@
 ### `index.html` - Complete Site
 - **Header**: Brand identity (Nohvara Continuum + Morris Javan Andanje) with navigation links
 - **Hero Section**: Main value proposition ("clean your story, choose your lane")
-- **Model Section** (id: `model`): 4-step service ladder (Clarity → Story → System → Expression)
+- **Model Section** (id: `model`): 4-step ladder (Clarity → Story → System → Expression)
 - **Proof Section** (id: `cases`): 4 real-world case studies as mini-cards
 - **CTA Sections**: Multiple call-to-action buttons linking to calendar booking and email list signup
 - **Footer**: Copyright, LinkedIn, and email contact
@@ -93,7 +93,7 @@
 
 ### Updating Content
 - Hero tagline/subtitle: Locate in `.hero-main` section
-- Service descriptions: Edit within `.grid-2` under "Model" section
+- Model descriptions: Edit within `.grid-2` under "Model" section
 - Case studies: Add/modify within `.card-list` (`.mini-card` elements)
 - Footer year: Automatically updates via JavaScript
 
