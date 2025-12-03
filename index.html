@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nohvara Continuum | Morris Javan Andanje</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="I help people clean their story, choose a lane and build systems that actually match their life."
+    />
+
+    <style>
+      :root {
+        --bg-main: #050608;
+        --card-bg: #101118;
+        --accent: #f5c26b;
+        --accent-soft: rgba(245, 194, 107, 0.16);
+        --accent-border: rgba(245, 194, 107, 0.4);
+        --text-main: #f5f5f7;
+        --text-soft: #a3a3b3;
+        --stroke-soft: rgba(255, 255, 255, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+        background: radial-gradient(circle at top, #1b1f2b 0, #050608 55%);
+        color: var(--text-main);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 1.8rem 1.3rem 2.4rem;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2.4rem;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+      }
+
+      .brand-title {
+        font-size: 0.86rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--text-soft);
+      }
+
+      .brand-sub {
+        font-size: 0.78rem;
+        color: var(--text-soft);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--text-soft);
+      }
+
+      nav a {
+        padding-bottom: 0.2rem;
+        border-bottom: 1px solid transparent;
+      }
+
+      nav a:hover {
+        border-color: rgba(245, 194, 107, 0.7);
+        color: var(--text-main);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+        gap: 1.8rem;
+        margin-bottom: 2.6rem;
+        align-items: center;
+      }
+
+      .hero-main h1 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+
+      .hero-main h1 span {
+        font-weight: 400;
+        color: var(--text-soft);
+        font-size: 1rem;
+        display: block;
+        margin-top: 0.2rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.98rem;
+        color: var(--text-main);
+        margin: 0 0 0.7rem;
+      }
+
+      .hero-sub {
+        font-size: 0.86rem;
+        color: var(--text-soft);
+        max-width: 34rem;
+        line-height: 1.6;
+        margin: 0 0 1.2rem;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem 1.4rem;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: 0.18s ease;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--accent-soft);
+        border-color: var(--accent-border);
+        color: var(--text-main);
+      }
+
+      .btn-primary:hover {
+        background: rgba(245, 194, 107, 0.28);
+        border-color: rgba(245, 194, 107, 0.7);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+        transform: translateY(-1px);
+      }
+
+      .btn-ghost {
+        background: transparent;
+        border-color: var(--stroke-soft);
+        color: var(--text-soft);
+      }
+
+      .btn-ghost:hover {
+        border-color: rgba(245, 194, 107, 0.55);
+        color: var(--text-main);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+        transform: translateY(-1px);
+      }
+
+      .micro-copy {
+        font-size: 0.75rem;
+        color: var(--text-soft);
+      }
+
+      .hero-photo {
+        justify-self: center;
+      }
+
+      .hero-photo-inner {
+        background: radial-gradient(circle at top, #252844 0, #050608 70%);
+        border-radius: 999px;
+        padding: 0.18rem;
+        border: 1px solid rgba(245, 194, 107, 0.28);
+        max-width: 220px;
+        aspect-ratio: 3 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .hero-photo-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 999px;
+      }
+
+      .section {
+        border-top: 1px solid var(--stroke-soft);
+        padding-top: 1.6rem;
+        margin-top: 1.6rem;
+      }
+
+      .section-title {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--text-soft);
+        margin: 0 0 0.7rem;
+      }
+
+      .section h2 {
+        font-size: 1.1rem;
+        margin: 0 0 0.5rem;
+      }
+
+      .section p {
+        font-size: 0.86rem;
+        color: var(--text-soft);
+        line-height: 1.6;
+        margin: 0 0 0.7rem;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+        gap: 1.6rem;
+        margin-top: 0.6rem;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 0.4rem 0 0.2rem;
+      }
+
+      .pill {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--stroke-soft);
+        color: var(--text-soft);
+        background: rgba(5, 6, 8, 0.8);
+      }
+
+      .card-list {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 0.3rem;
+      }
+
+      .mini-card {
+        border-radius: 12px;
+        border: 1px solid var(--stroke-soft);
+        background: linear-gradient(
+          145deg,
+          rgba(10, 11, 16, 0.96),
+          rgba(5, 6, 10, 0.96)
+        );
+        padding: 0.9rem 1rem;
+      }
+
+      .mini-card h3 {
+        font-size: 0.9rem;
+        margin: 0 0 0.25rem;
+      }
+
+      .mini-card p {
+        font-size: 0.8rem;
+        margin: 0;
+        color: var(--text-soft);
+      }
+
+      .case-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        margin-bottom: 0.25rem;
+      }
+
+      footer {
+        border-top: 1px solid var(--stroke-soft);
+        margin-top: 2rem;
+        padding-top: 1.1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: var(--text-soft);
+      }
+
+      footer a {
+        border-bottom: 1px solid transparent;
+      }
+
+      footer a:hover {
+        border-color: rgba(245, 194, 107, 0.7);
+        color: var(--text-main);
+      }
+
+      @media (max-width: 720px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hero-photo {
+          order: -1;
+        }
+
+        .page {
+          padding-inline: 1.05rem;
+        }
+
+        .grid-2 {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <header>
+        <div class="brand">
+          <div class="brand-title">Nohvara Continuum</div>
+          <div class="brand-sub">Morris Javan Andanje</div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#model">Model</a></li>
+            <li><a href="#cases">Proof</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/morris-javan-andanje"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-main">
+          <h1>
+            I help you clean your story and choose your lane.
+            <span>Then we build a system that actually fits your life.</span>
+          </h1>
+
+          <p class="hero-tagline">
+            No hype. No “10-step life hack”. Just calm, practical clarity for
+            people who are tired of improvising their future.
+          </p>
+
+          <p class="hero-sub">
+            I work with people who feel like they’re “a lot” on paper, but scattered
+            in real life. We sort your identity, direction, and daily rhythm so your
+            decisions stop fighting each other.
+          </p>
+
+          <div class="cta-row">
+            <a
+              href="YOUR_BOOKING_LINK_HERE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+            >
+              Book a clarity call
+            </a>
+
+            <a
+              href="YOUR_QUIET_HUB_URL_HERE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-ghost"
+            >
+              Join the Quiet List
+            </a>
+          </div>
+
+          <p class="micro-copy">
+            Not ready yet? Quiet List = one email a month, one piece of clarity.
+          </p>
+        </div>
+
+        <div class="hero-photo">
+          <div class="hero-photo-inner">
+            <!-- Replace profile.jpg with your actual file -->
+            <img src="profile.jpg" alt="Portrait of Morris Javan Andanje" />
+          </div>
+        </div>
+      </section>
+
+      <!-- MODEL -->
+      <section id="model" class="section">
+        <div class="section-title">How I work</div>
+        <h2>The Nohvara Ladder in plain language</h2>
+        <p>
+          I don’t sell “coaching hours”. I run a simple ladder that keeps things
+          clean for both of us.
+        </p>
+
+        <div class="grid-2">
+          <div>
+            <h3>1. Clarity (free, short)</h3>
+            <p>
+              You share where you’re stuck. I give you:
+            </p>
+            <ul style="font-size: 0.84rem; color: var(--text-soft); padding-left: 1.1rem;">
+              <li>one diagnosis</li>
+              <li>one correction</li>
+              <li>one direction</li>
+            </ul>
+            <p>
+              That’s it. No rewriting. No hand-holding. Just enough to see the
+              real problem.
+            </p>
+
+            <h3>2. Story (paid – identity rewrite)</h3>
+            <p>
+              If the clarity lands, we rebuild how you present yourself:
+            </p>
+            <div class="pill-list">
+              <div class="pill">Headline</div>
+              <div class="pill">About / bio</div>
+              <div class="pill">Experience structure</div>
+              <div class="pill">Strength logic</div>
+              <div class="pill">Pathway map</div>
+            </div>
+            <p>
+              This becomes your upgraded identity – on LinkedIn, your site, or
+              wherever you show up.
+            </p>
+          </div>
+
+          <div>
+            <h3>3. System (paid – retainer)</h3>
+            <p>
+              Once your story is clean, we stop relying on motivation. We build:
+            </p>
+            <div class="pill-list">
+              <div class="pill">Habits</div>
+              <div class="pill">Decision rules</div>
+              <div class="pill">Weekly rhythm</div>
+              <div class="pill">Accountability</div>
+            </div>
+            <p>
+              The goal: your life runs on a calm system instead of constant
+              fire-fighting.
+            </p>
+
+            <h3>4. Expression (art & design)</h3>
+            <p>
+              For some people, the last step is making their identity visible:
+              portraits, visuals, or quiet brand elements that actually feel like
+              them. That’s optional, but powerful.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF -->
+      <section id="cases" class="section">
+        <div class="section-title">Proof of work</div>
+        <h2>What this looks like in real people’s lives</h2>
+        <p>
+          I keep things private, so no screenshots. But here’s what’s already
+          happened in real conversations:
+        </p>
+
+        <div class="card-list">
+          <div class="mini-card">
+            <div class="case-label">Case: Analyst with “generic” profile</div>
+            <h3>From “just an analyst” to rare, hireable niche</h3>
+            <p>
+              We reframed his experience around agri–risk and climate data instead of
+              a generic “analyst” label. Once his lane was clear, he knew exactly who
+              to talk to and what to say.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <div class="case-label">Case: HR / people ops</div>
+            <h3>From HR buzzwords to People Systems builder</h3>
+            <p>
+              Her profile was full of tasks and titles. We rewired it around one
+              clear promise: better systems for people. Recruiters started reading
+              her as a partner, not just an administrator.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <div class="case-label">Case: high-sensitivity creative</div>
+            <h3>From emotional overload to structured expression</h3>
+            <p>
+              Instead of fighting their emotional intensity, we built rules around
+              focus, rest, and boundaries. Their work rhythm stopped collapsing every
+              time life got loud.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <div class="case-label">Case: quiet multi-potentialite</div>
+            <h3>From “I do everything” to one visible lane</h3>
+            <p>
+              We sorted their skills into one visible core lane and a few supporting
+              roles. Their story now sounds simple, even though their mind is not.
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.8rem; color: var(--text-soft); margin-top: 0.8rem;">
+          All of this comes from simple conversations: clarity first, then story,
+          then system. No theatrics.
+        </p>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="section">
+        <div class="section-title">Next step</div>
+        <h2>If this sounds like the way you think, not the way you’re living</h2>
+        <p>
+          You don’t need a personality transplant. You need your story, systems and
+          energy pointed in the same direction.
+        </p>
+
+        <div class="cta-row">
+          <a
+            href="https://calendar.app.google/RNHBoKBDEshHmGQ96"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Book a clarity call
+          </a>
+
+          <a
+            href="https://script.google.com/macros/s/AKfycbx-yEBTiQvGoW8eHZb7igIcA8QbO9fz2BHF5XW4ODxVAVp5SBizgsTzoK5DwjUg6KeO9Q/exec"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-ghost"
+          >
+            Join the Quiet List
+          </a>
+        </div>
+
+        <p class="micro-copy">
+          Prefer to just observe for a while? The Quiet List is built exactly for
+          that.
+        </p>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div>© <span id="year"></span> Nohvara Continuum · Morris Javan Andanje</div>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/morris-javan-andanje"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          &nbsp;·&nbsp;
+          <a href="mailto:morrisjavan77@gmail.com">morrisjavan77@gmail.com</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
